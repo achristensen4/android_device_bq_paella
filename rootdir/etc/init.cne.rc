@@ -12,9 +12,9 @@ on init
     export LD_PRELOAD libsigchain.so:libNimsWrap.so
 
 service cnd /system/bin/cnd
-    class late_start
+    class main
     socket cnd stream 660 root inet
 
 service dpmd /system/bin/dpmd
-    class late_start
+    class main
     socket dpmd stream 660 root system
