@@ -37,10 +37,6 @@ on fs
     chmod 0600 /persist/xtalk_cal
 
 on boot
-    # TapToWake
-    chown root system /sys/android_touch/SMWP
-    chmod 0660 /sys/android_touch/SMWP
-
     # KeyDisabler
     chown root system /sys/android_touch/buttons
     chmod 0660 /sys/android_touch/buttons
@@ -55,7 +51,7 @@ on boot
     setprop ro.product.locale.region US
 
 service sensord /system/bin/sensord
-    class late_start
+    class main
     user system
     group system
     oneshot
